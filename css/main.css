@@ -1,0 +1,110 @@
+
+:root {
+    /* CSS HEX */
+    --old-burgundy: #4e3d42ff;
+    --granite-gray: #6d6466ff;
+    --spanish-gray: #9f9f92ff;
+    --laurel-green: #c9d5b5ff;
+    --gainsboro: #e3dbdbff;
+
+    /* Size */
+    --width-container: 50rem;
+    --font-size__l: 2.5rem;
+    --font-size__m: 1.4rem;
+
+    /* Fonts */
+    --font-regular: 'Advent Pro', sans-serif;
+}
+
+
+    /* Animacion */
+
+    @keyframes aniSalto {
+        0% {
+            transform: translateY(0);
+        }
+
+        50% {
+            transform: translateY(-3rem);
+        }
+
+        100% {
+            transform: translateY(0);
+        }
+    }
+
+    /* Generales */
+
+body {
+    font-family: var(--font-regular);
+    background-color: var(--gainsboro);
+    margin: 0;
+    font-size: var(--font-size__m);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: normal;
+}
+
+.container {
+    max-width: var(--width-container);
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+.landing__titulo {
+    text-align: center;
+    color: var(--spanish-gray);
+    line-height: 3rem;
+    font-size: var(--font-size__l);
+}
+
+.landing__titulo__oscuro {
+    color: var(--old-burgundy);
+}
+
+.landing__ul {
+    list-style: none;
+    display: flex;
+    padding: 0;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 5rem;
+}
+
+.landing__link {
+    display: block;
+    max-width: 10rem;
+    animation-duration: 0.5s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: 1;
+    touch-action: none;
+}
+
+.landing__link:hover {
+    animation-name: aniSalto;
+}
+
+.landing__img {
+    border-radius: 50%;
+    border: 3px solid var(--spanish-gray);
+    padding: 3px;
+}
+
+.landing__texto {
+    text-align: center;
+    display: block;
+    margin-top: 1.2rem;
+}
+
+@media screen and (max-width: 40rem) {
+    .landing__ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 2.5rem;
+    }
+
+    .landing__link {
+        max-width: 12rem;
+    }
+}
